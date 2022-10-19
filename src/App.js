@@ -1,11 +1,13 @@
 
 import './App.css';
+import SearchBar from './components/SearchBar';
 import Menu from './components/Menu';
 
 function App() {
   return (
-    <div className='App'>
-    <Menu />
+    <div>
+      <Menu />
+      <SearchBar placeholder='Search Pokémon'></SearchBar>
     </div>
   );
 }

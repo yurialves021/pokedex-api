@@ -1,0 +1,9 @@
+.btn-div button {
+    background-color: #0e6f9f;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    color: white;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
