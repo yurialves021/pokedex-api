@@ -3,9 +3,11 @@ import './Button.css';
 
 
 const Button = (props)=>{
+    const {className,onClick, children} = props;
+   
 return (
-    <div className="btn-div">
-        <button onClick={props.onClick}>{props.children}</button>
+    <div className={className}>
+        <button onClick={onClick}>{children}</button>
     </div>
 );
 };

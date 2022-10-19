@@ -9,20 +9,27 @@ import { getPokemonData, getPokemons } from './pokeapi';
 
 function App() {
 
+  //cria um estado para o carregamento
   const [loading, setLoading] = useState(false);
+
+  //cria um estado para os pokemons
   const [pokemons, setPokemons] = useState([]);
 
+  //função para carregar os pokemons
   const fetchPokemons = async () => {
 
     try {
-
+      
       setLoading(true);
+      //chama a função assincrona para pegar todos os pokemons
       const data = await getPokemons();
 
+      //pega os pokemons retornados e traz as informações especificas de cada um
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
 
+      //adiciona o resultado do retorno das promises a uma variavel
       const result = await Promise.all(promises);
     
       setPokemons(result);
@@ -34,6 +41,7 @@ function App() {
 
   };
 
+  //Está renderizando a pagina caso aconteça ...
   useEffect(() => {
     fetchPokemons();
   }, []);
