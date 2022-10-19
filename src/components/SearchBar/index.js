@@ -40,7 +40,7 @@ const SearchBar = (props) => {
                 <input placeholder={props.placeholder} onChange={onChangeEvent}></input>
             </div>
 
-            <Button onClick={onClickEvent}>Search</Button>
+            <Button className='btn-div button' onClick={onClickEvent}>Search</Button>
 
             {pokemon ? (
                 <div>

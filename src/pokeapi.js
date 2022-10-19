@@ -13,7 +13,7 @@ export const searchPokemonApi = async (pokemon) => {
 };
 
 //função para retornar todos os pokemons comm um limite de 50 por vez, inicializando no item0 
-export const getPokemons = async (limit = 51, offset=0) => {
+export const getPokemons = async (limit, offset) => {
     try {
         //atribuindo a uma variavel o link da api
         let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
