@@ -46,7 +46,7 @@ const SearchBar = (props) => {
                 <div>
                     <img src={pokemon.sprites.front_default} alt='pokemon' />
                 </div>
-            ) : null};
+            ) : null}
         </div>
     );
 
