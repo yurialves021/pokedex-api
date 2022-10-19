@@ -3,7 +3,8 @@
 <p align="center">Voltando um pouco a infância, criei uma Pokedex responsiva utilizando React. </p>
 <p align="center"> Nessa aplicação consegui utilizar Hooks, consumir dados de uma API pokeapi e utilizar o localstorage.</p>
 
-## <div align="center"> 🛠️ Tecnologias </div>
+
+## 🛠️ Tecnologias Utilizadas
 
 <ul>
   <li><a href="https://reactjs.org/">React</a></li>
