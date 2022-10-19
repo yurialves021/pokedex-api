@@ -1,0 +1,13 @@
+.Logo {
+    width: 160px;
+}
+
+.Menu {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ 
+
