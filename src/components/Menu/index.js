@@ -8,6 +8,8 @@ const Menu = () => {
             <div>
                 <img src={Logo} alt='logo' className="Logo"/>
             </div>
+
+            <div>❤️</div>
         </nav>
     )
 }
