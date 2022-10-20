@@ -1,16 +1,23 @@
 import './Pokemon.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from "../Button";
+import FavoriteContext from '../../contexts/favoritesContext';
 
 
 const Pokemon = (props) => {
 
     const { pokemon } = props;
-    const heart = "❤️";
 
-    const onClickHeart = () =>{
+    const { favoritePokemons, updateFavoritePokemon } = useContext(FavoriteContext);
+
+    const onClickHeart = () => {
+        updateFavoritePokemon(pokemon.name);
 
     };
+
+    //verifica se o pokemon atual já está incluso na lista de pokemons favoritos
+    const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
+
 
     return (
         <div className='pokemon-card'>

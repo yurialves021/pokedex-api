@@ -79,7 +79,7 @@ function App() {
   };
 
   return (
-    <FavoriteProvider value={{ favoritePokemon: favorites, updateFavoritePokemon: updateFavoritePokemon }}>
+    <FavoriteProvider value={{ favoritePokemons: favorites, updateFavoritePokemon: updateFavoritePokemon }}>
       <div>
         <Menu />
         <SearchBar placeholder='Search Pokémon'></SearchBar>
