@@ -6,3 +6,8 @@
   text-align: center;
 }
 
+.not-found-text {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 20px;
+}

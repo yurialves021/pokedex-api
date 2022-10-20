@@ -18,11 +18,13 @@ const Pokemon = (props) => {
     //verifica se o pokemon atual já está incluso na lista de pokemons favoritos
     const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
 
+    const pokemonAnimated = pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
 
     return (
+        
         <div className='pokemon-card'>
             <div className='pokemon-image-container'>
-                <img src={pokemon.sprites.front_default} alt={pokemon.name} className='pokemon-image' />
+                <img src={pokemonAnimated} alt={pokemon.name} className='pokemon-image' />
             </div>
             <div className='card-body'>
                 <div className='card-top'>

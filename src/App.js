@@ -1,10 +1,10 @@
 
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import Menu from './components/Menu';
 import Pokedex from './components/Pokedex';
-import { getPokemonData, getPokemons } from './pokeapi';
+import { getPokemonData, getPokemons, searchPokemonApi } from './pokeapi';
 import { FavoriteProvider } from './contexts/favoritesContext';
 
 const favoritesKey = "f"
@@ -20,6 +20,9 @@ function App() {
   const [totalPage, setTotalPage] = useState(0);
   //cria um estado para os pokemons favoritos
   const [favorites, setFavorites] = useState([]);
+
+  const [notFound, setNotFound] = useState(false);
+
   //definindo a quantidade de pokemons por pagina
   const itensPerPage = 26;
 
@@ -29,6 +32,8 @@ function App() {
     try {
 
       setLoading(true);
+      setNotFound(false);
+
       //chama a função assincrona para pegar todos os pokemons
       const data = await getPokemons(itensPerPage, itensPerPage * page);
 
@@ -46,8 +51,6 @@ function App() {
       //Calculo para informar o total de paginas, onde pega o total de pokemons e divide pelo total de pokemons por pagina
       setTotalPage(Math.ceil(data.count / itensPerPage));
 
-
-
     } catch (error) {
       console.log("Fetch Pokemon Error:", error);
     }
@@ -63,7 +66,7 @@ function App() {
   useEffect(() => {
     loadFavoritePokemons()
   }, []);
-  
+
 
   //Está renderizando a pagina caso mude de pagina
   useEffect(() => {
@@ -89,17 +92,41 @@ function App() {
     setFavorites(updatedFavorites);
   };
 
+  const onSearch = async (pokemon) => {
+
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+
+    setLoading(true);
+    setNotFound(false);
+
+    const result = await searchPokemonApi(pokemon);
+
+    if (!result) {
+      setNotFound(true);
+    } else {
+      setPokemons([result]);
+      setPage(0);
+      setTotalPage(1);
+    }
+    setLoading(false)
+  }
+
   return (
     <FavoriteProvider value={{ favoritePokemons: favorites, updateFavoritePokemon: updateFavoritePokemon }}>
       <div>
         <Menu />
-        <SearchBar placeholder='Search Pokémon'></SearchBar>
-        <Pokedex
-          pokemons={pokemons}
-          loading={loading}
-          page={page}
-          setPage={setPage}
-          totalPage={totalPage} />
+        <SearchBar placeholder='Search Pokémon' onSearch={onSearch}></SearchBar>
+        {notFound ? (
+          <div class-name="not-found-text"> Pokémon não existe! </div>
+        ) :
+          (<Pokedex
+            pokemons={pokemons}
+            loading={loading}
+            page={page}
+            setPage={setPage}
+            totalPage={totalPage} />)}
       </div>
     </FavoriteProvider>
   );
