@@ -1,60 +1,84 @@
-.pokemon-card {
-    display: flex;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
-  }
+.cards {
+  display: flex;
+  padding: 32px;
   
-  .pokemon-image {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
-  }
+}
+
+.cards .pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-height: 450px;
+  margin-left: 32px;
+  max-width: 100%;
+  width: 350px;
   
-  .pokemon-image-container {
-    padding: 0px 5px;
-  }
+}
+
+
+.cards  .pokemons .icon {
+  width:80px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.cards  .pokemons img {
+  width: 100%;
+}
+
+.cards .pokemons h3 {
+  font-size: 100%;
+  margin: 16px 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.cards  .pokemons span {
+  font-weight: 300;
+  max-width: 240px;
+  font-size: 80%;
+  margin-bottom: 16px;
+  display: inline-block;
   
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 10px 10px 0px;
-    flex: 1;
-  }
-  
-  .card-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .card-top h3 {
-    text-transform: capitalize;
-  }
-  
-  .card-bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .pokemon-type {
-    display: flex;
-  }
-  
-  .pokemon-type-text {
-    margin-right: 10px;
-    text-transform: capitalize;
+}
+
+.cards .pokemons button {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 32px;
+  border: 0;
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 16px 0;
+  background: linear-gradient(to right, #e2dee9, #DFCBFF);
+}
+
+
+
+@media screen and (max-width: 100%) {
+  .cards {
+      flex: 1 1 150px;
+      margin: 5px;
   }
 
-  .pokemon-heart-btn {
-    border: none;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
-    padding: 4px;
-    cursor: pointer;
-    align-items: center;
+ .cards .pokemons {
+      margin-left: 0;
+      margin-bottom: 32px;
   }
-  
+
+  .cards .pokemons:last-child {
+      margin-bottom: 0;
+  }
+
+  .cards .pokemons button {
+      font-size: 70%;
+  }
+
+}

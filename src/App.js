@@ -10,6 +10,7 @@ import { FavoriteProvider } from './contexts/favoritesContext';
 const favoritesKey = "f"
 function App() {
 
+  
   //cria um estado para o carregamento
   const [loading, setLoading] = useState(false);
   //cria um estado para os pokemons
@@ -130,6 +131,8 @@ function App() {
       </div>
     </FavoriteProvider>
   );
+
+
 }
 
 export default App;

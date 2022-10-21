@@ -5,8 +5,8 @@ import './Pokedex.css';
 
 const Pokedex = (props) => {
 
-    const { pokemons, loading, page,  setPage, totalPage } = props;
-
+    const { pokemons, loading, page,  setPage, totalPage} = props;
+    
 
     const onLeftClickHandler = () => {
         if (page > 0) {
