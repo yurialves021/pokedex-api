@@ -2,5 +2,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 450px;
+    margin-left: 32px;
+    max-width: 100%;
+    width: 350px;
   }
   
+
+  .pagination-container button {
+    padding: 10px;
+    border-radius: 22px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 16px 10px;
+    background: linear-gradient(to right, #e2dee9, #DFCBFF);
+  }

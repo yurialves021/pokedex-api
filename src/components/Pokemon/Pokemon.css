@@ -1,6 +1,9 @@
 .cards {
   display: flex;
   padding: 32px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
   
 }
 
@@ -77,8 +80,6 @@
       margin-bottom: 0;
   }
 
-  .cards .pokemons button {
-      font-size: 70%;
-  }
+
 
 }

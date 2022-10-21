@@ -47,6 +47,7 @@ const Pokemon = (props) => {
     const poke_types =  pokemon.types.map(type => type.type.name);
     const type = main_types.find(type => poke_types.indexOf(type) > -1);
     const color = colors[type];
+    
     return (
         <main className="cards">
         <section className="pokemons" style={{boxShadow: `40px 20px 50px -30px ${color}`}}>

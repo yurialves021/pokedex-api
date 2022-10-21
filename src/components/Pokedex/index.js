@@ -24,13 +24,15 @@ const Pokedex = (props) => {
         <div>
             <div className="pokedex-header">
                 <h1>Pokedex</h1>
-
+                <div className="pagination">
                 <Pagination
                     page={page + 1}
                     totalPage={totalPage}
                     onLeftClick={onLeftClickHandler}
                     onRightClick={onRightClickHandler}
+                    
                 />
+                </div>
 
             </div>
             {/*  verificando se já foi carregado, caso tenha sido irá exibir os pokemons*/}
