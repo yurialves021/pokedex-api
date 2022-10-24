@@ -21,7 +21,7 @@ function App() {
   const [totalPage, setTotalPage] = useState(0);
   //cria um estado para os pokemons favoritos
   const [favorites, setFavorites] = useState([]);
-
+  //cria um estado para notFound da busca
   const [notFound, setNotFound] = useState(false);
 
   //definindo a quantidade de pokemons por pagina

@@ -41,11 +41,17 @@ const Pokemon = (props) => {
         dark:'#5a5366',
         fairy:'#ec8fe6'
     };
-  
+    
+    //retorna uma array com strings
     const main_types = Object.keys(colors);
 
+    //varre a lista de pokemons para coletar os tipos deles
     const poke_types =  pokemon.types.map(type => type.type.name);
+
+    //busca na array criada o pokemon utilizando como filtro o tipo
     const type = main_types.find(type => poke_types.indexOf(type) > -1);
+
+    //atribui ao objeto criado o tipo retornado acima para coletar a cor correta
     const color = colors[type];
     
     return (
