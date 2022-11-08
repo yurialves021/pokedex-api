@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import Pokedex from './components/Pokedex';
 import { getPokemonData, getPokemons, searchPokemonApi } from './pokeapi';
 import { FavoriteProvider } from './contexts/favoritesContext';
+import { Outlet } from 'react-router-dom';
 
 const favoritesKey = "f"
 function App() {
@@ -129,7 +130,9 @@ function App() {
             setPage={setPage}
             totalPage={totalPage} />)}
       </div>
+      <Outlet />
     </FavoriteProvider>
+   
   );
 
 
