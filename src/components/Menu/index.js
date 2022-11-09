@@ -12,7 +12,7 @@ const Menu = () => {
                 <img src={Logo} alt='logo' className="Logo"/>
             </div>
 
-            <div>{favoritePokemons.length} ❤️</div>
+            <div><p className="texto">Favorites Pokémon's ❤️ : {favoritePokemons.length} </p></div>
         </nav>
     )
 }

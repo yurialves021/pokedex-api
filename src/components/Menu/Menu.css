@@ -8,6 +8,13 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    
 }
  
+
+.texto{
+    font-size: 100%;
+    margin: 16px 0;
+    font-family: 'Press Start 2P', cursive;
+}
 

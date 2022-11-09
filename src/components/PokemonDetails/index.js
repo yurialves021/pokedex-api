@@ -2,10 +2,10 @@ import './PokemonDetails.css';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function PokemonDetails(){
+export default function PokemonDetails() {
 
     const navigate = useNavigate();
-    const { state }= useLocation();
+    const { state } = useLocation();
     const { pokemon } = state;
 
     const colors = {
@@ -35,22 +35,25 @@ export default function PokemonDetails(){
     const color = colors[type];
 
     return (
-        <div className="cards-1" style={{background: color}}>
-        <div
-        className="pokemons-1">
-        <div className="icon-1">
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-        </div>
-        <h3>{pokemon.name.toUpperCase()} #{pokemon.id}</h3>
-        <br />
-        <span> 
-            {pokemon.types.map((type, index) => {
-                return (
-                    <div key={index}><p>Type {index}: {type.type.name} </p></div>
-                );
-            })}</span>
-       
-    </div>
-    </div>
+        <>  <button className='back' onClick={() => navigate(-1)}> {'< Back'} </button>
+            <div className="cards-1" style={{ background: color }}>
+                <div
+                    className="pokemons-1">
+                    <div className="icon-1">
+                        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                    </div>
+                    <h3>{pokemon.name.toUpperCase()} #{pokemon.id}</h3>
+                    <br />
+                    <span>
+                        {pokemon.types.map((type, index) => {
+                            return (
+                                <div key={index}><p>Type {index}: {type.type.name} </p></div>
+                            );
+                        })}</span>
+
+                </div>
+
+            </div>
+        </>
     );
 }

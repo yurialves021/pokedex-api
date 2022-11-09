@@ -60,9 +60,9 @@ const Pokemon = (props) => {
         <main className="cards">
             <div
                 className="pokemons"
-                onClick={() => navigate(`/pokemon/${pokemon.id}`, { state: { pokemon } })}
                 style={{ boxShadow: `40px 20px 50px -30px ${color}` }}>
-                <div className="icon">
+                <div className="icon"
+                    onClick={() => navigate(`/pokemon/${pokemon.id}`, { state: { pokemon } })}>
                     <img src={pokemonAnimated} alt={pokemon.name} />
                 </div>
                 <h3>{pokemon.name} #{pokemon.id}</h3>
