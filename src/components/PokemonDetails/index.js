@@ -1,17 +1,12 @@
 import './PokemonDetails.css';
 import React from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { getPokemonData } from '../../pokeapi';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function PokemonDetails(){
 
-    const { id } = useParams();
     const navigate = useNavigate();
     const { state }= useLocation();
     const { pokemon } = state;
-
-    const pokemonAnimated = pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-
 
     const colors = {
         fire: '#ff9c54',
@@ -34,33 +29,28 @@ export default function PokemonDetails(){
         fairy: '#ec8fe6'
     };
 
-    //retorna uma array com strings
     const main_types = Object.keys(colors);
-
-    //varre a lista de pokemons para coletar os tipos deles
     const poke_types = pokemon.types.map(type => type.type.name);
-
-    //busca na array criada o pokemon utilizando como filtro o tipo
     const type = main_types.find(type => poke_types.indexOf(type) > -1);
-
-    //atribui ao objeto criado o tipo retornado acima para coletar a cor correta
     const color = colors[type];
 
     return (
+        <div className="cards-1" style={{background: color}}>
         <div
-        className="pokemons"
-        style={{ boxShadow: `40px 20px 50px -30px ${color}` }}>
-        <div className="icon">
-            <img src={pokemonAnimated} alt={pokemon.name} />
+        className="pokemons-1">
+        <div className="icon-1">
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         </div>
-        <h3>{pokemon.name} #{pokemon.id}</h3>
-        <span>  {/* A API me retorna um array com as informaões do tipo, por isso foi necessário varrer essa lista */}
+        <h3>{pokemon.name.toUpperCase()} #{pokemon.id}</h3>
+        <br />
+        <span> 
             {pokemon.types.map((type, index) => {
                 return (
-                    <div key={index}>{type.type.name}</div>
+                    <div key={index}><p>Type {index}: {type.type.name} </p></div>
                 );
             })}</span>
        
+    </div>
     </div>
     );
 }
